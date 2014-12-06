@@ -5,14 +5,12 @@
   fileinfo = $('.fileinfo');
 
   fileinfo.each(function() {
-    var filename, orighref, swfName;
+    var fName, filename, orighref;
     orighref = $(this).children('a');
     orighref = orighref.attr("href");
     filename = $('.unimportant > a', this);
-    swfName = filename.attr("download");
-    if (swfName.match(/\.swf$/)) {
-      return $(this).append(' <a class="swfdownload" download="' + swfName + '" href="' + orighref + '">[Download]</a>');
-    }
+    fName = filename.attr("download");
+    return $(this).append(' <a class="fdownload" download="' + fName + '" href="' + orighref + '">[Download]</a>');
   });
 
 }).call(this);
